@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="sv">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Idioten - Kortspel</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <h1>🃏 Idioten</h1>
+        <div id="info">
+            <p>Kort kvar: <span id="stock-count" class="highlight">0</span> | <span id="stats">Spelade: 0 | Vunna: 0 (0%)</span></p>
+            <p id="message"></p>
+        </div>
+        <div id="controls">
+            <button id="deal-btn" class="btn-primary" title="Dela ut kort (Space/Enter)">
+                <span class="btn-icon">🎴</span> Dela ut
+            </button>
+            <button id="move-btn" class="btn-secondary" title="Flytta till tom hög (M)">
+                <span class="btn-icon">↔️</span> Flytta
+            </button>
+            <button id="undo-btn" class="btn-secondary" title="Ångra senaste drag (Ctrl+Z)">
+                <span class="btn-icon">↩️</span> Ångra
+            </button>
+            <button id="reset-btn" class="btn-danger" title="Starta om spelet (R)">
+                <span class="btn-icon">🔄</span> Återställ
+            </button>
+        </div>
+        <div id="game-board">
+            <div class="pile" id="pile0"></div>
+            <div class="pile" id="pile1"></div>
+            <div class="pile" id="pile2"></div>
+            <div class="pile" id="pile3"></div>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
