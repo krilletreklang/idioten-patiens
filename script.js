@@ -186,10 +186,11 @@ class GameState {
     }
 
     isWin() {
+        // Man vinner när spelet är över (inga fler kort att dela) och bara fyra ess finns kvar
+        if (!this.gameOver) return false;
         const totalCards = this.piles.slice(0, 4).reduce((sum, pile) => sum + pile.size(), 0);
         return totalCards === 4 && 
-               this.piles.slice(0, 4).every(pile => pile.size() === 1 && pile.peekCard().rank === 14) &&
-               this.piles[4].isEmpty(); // Stock måste vara tom
+               this.piles.slice(0, 4).every(pile => pile.size() === 1 && pile.peekCard().rank === 14);
     }
 
     reset() {
