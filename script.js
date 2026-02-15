@@ -187,7 +187,9 @@ class GameState {
 
     isWin() {
         const totalCards = this.piles.slice(0, 4).reduce((sum, pile) => sum + pile.size(), 0);
-        return totalCards === 4 && this.piles.slice(0, 4).every(pile => pile.size() === 1 && pile.peekCard().rank === 14);
+        return totalCards === 4 && 
+               this.piles.slice(0, 4).every(pile => pile.size() === 1 && pile.peekCard().rank === 14) &&
+               this.piles[4].isEmpty(); // Stock måste vara tom
     }
 
     reset() {
